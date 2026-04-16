@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Study Task Tracker</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <a class="brand" href="#">Study Task Tracker</a>
+        <div class="nav-links">
+            <a href="#">Tasks</a>
+            <a href="#">Schedule</a>
+            <a href="#">Progress</a>
+        </div>
+    </nav>
 
-  <div class="container">
-    <h1>📚 Study Task Tracker</h1>
+    <main class="container">
+        <p class="eyebrow">Stay organized</p>
+        <h1>Plan your study tasks</h1>
+        <p class="intro">Add tasks, track your list, and keep your study day moving.</p>
 
-    <input type="text" id="taskInput" placeholder="Enter task">
-    <button onclick="addTask()">Add</button>
+        <div class="task-form">
+            <input type="text" id="taskInput" placeholder="Enter task">
+            <button id="addTaskButton">Add</button>
+        </div>
 
-    <ul id="taskList"></ul>
-  </div>
+        <ul id="taskList"></ul>
+    </main>
 
-  <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var addTaskButton = document.getElementById("addTaskButton");
+
+            if (addTaskButton) {
+                addTaskButton.addEventListener("click", function () {
+                    if (typeof addTask === "function") {
+                        addTask();
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
